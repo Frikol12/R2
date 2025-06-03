@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Online Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R2Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Unica+One&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="smoke-background"></div>
   <header>
-    <h1 class="animated-title">Welcome to My Store!</h1>
+    <div class="logo glitch" data-text="R2Store">R2Store</div>
+    <nav id="main-nav">
+      <button onclick="filterItems('all')">🏠 Home</button>
+      <button id="catalogToggle">🧾 Catalog</button>
+      <button id="cartToggle">🛒 Cart</button>
+      <button id="registerBtn">✉ Register</button>
+    </nav>
+    <div class="burger" onclick="toggleMobileMenu()">☰</div>
   </header>
 
-  <main>
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="T-Shirt">
-      <h2>T-Shirt</h2>
-      <p class="price">Price: <span>25</span> €</p>
-      <button class="buy-button" onclick="buyProduct('T-Shirt', 25)">Buy Now</button>
-    </section>
+  <aside id="catalog">
+    <h2>Catalog</h2>
+    <ul>
+      <li onclick="filterItems('hoodies')">🧥 Warm Hoodies</li>
+      <li onclick="filterItems('sneakers')">👟 Casual Sneakers</li>
+      <li onclick="filterItems('jackets')">🧊 Stylish Jackets</li>
+      <li onclick="filterItems('tshirts')">👕 Graphic T-Shirts</li>
+      <li onclick="filterItems('hats')">🧢 Street Hats</li>
+    </ul>
+  </aside>
 
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Sneakers">
-      <h2>Sneakers</h2>
-      <p class="price">Price: <span>60</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Sneakers', 60)">Buy Now</button>
-    </section>
+  <aside id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="totalPrice">Total: €0</p>
+  </aside>
 
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Watch">
-      <h2>Watch</h2>
-      <p class="price">Price: <span>120</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Watch', 120)">Buy Now</button>
-    </section>
+  <main id="productList"></main>
 
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Backpack">
-      <h2>Backpack</h2>
-      <p class="price">Price: <span>40</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Backpack', 40)">Buy Now</button>
-    </section>
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Register with your email</h2>
+      <input type="email" id="email" placeholder="Your Email">
+      <button onclick="registerEmail()">Register</button>
+    </div>
+  </div>
 
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Sunglasses">
-      <h2>Sunglasses</h2>
-      <p class="price">Price: <span>35</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Sunglasses', 35)">Buy Now</button>
-    </section>
+  <!-- Chat Button -->
+  <button class="chat-toggle" id="chatToggle">💬</button>
 
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Hat">
-      <h2>Hat</h2>
-      <p class="price">Price: <span>20</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Hat', 20)">Buy Now</button>
-    </section>
-
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Laptop Bag">
-      <h2>Laptop Bag</h2>
-      <p class="price">Price: <span>70</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Laptop Bag', 70)">Buy Now</button>
-    </section>
-
-    <section class="product">
-      <img src="https://via.placeholder.com/200" alt="Wireless Earbuds">
-      <h2>Wireless Earbuds</h2>
-      <p class="price">Price: <span>90</span> €</p>
-      <button class="buy-button" onclick="buyProduct('Wireless Earbuds', 90)">Buy Now</button>
-    </section>
-  </main>
+  <!-- Chat Modal -->
+  <div id="chatModal" class="chat-modal">
+    <div class="chat-box">
+      <div class="chat-header">
+        <h3>Support Chat</h3>
+        <span class="close" id="closeChat">&times;</span>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 My Online Store</p>
+    <p>&copy; 2025 R2Store. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Social links: [Add later]</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
