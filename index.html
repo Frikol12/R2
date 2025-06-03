@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R2Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Unica+One&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo glitch" data-text="R2Store">R2Store</div>
+    <nav id="main-nav">
+      <button onclick="filterItems('all')">🏠 Home</button>
+      <button id="catalogToggle">🧾 Catalog</button>
+      <button id="cartToggle">🛒 Cart</button>
+      <button id="registerBtn">✉ Register</button>
+    </nav>
+    <div class="burger" onclick="toggleMobileMenu()">☰</div>
+  </header>
+
+  <aside id="catalog">
+    <h2>Catalog</h2>
+    <ul>
+      <li onclick="filterItems('hoodies')">🧥 Warm Hoodies</li>
+      <li onclick="filterItems('sneakers')">👟 Casual Sneakers</li>
+      <li onclick="filterItems('jackets')">🧊 Stylish Jackets</li>
+      <li onclick="filterItems('tshirts')">👕 Graphic T-Shirts</li>
+      <li onclick="filterItems('hats')">🧢 Street Hats</li>
+    </ul>
+  </aside>
+
+  <aside id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="totalPrice">Total: €0</p>
+  </aside>
+
+  <main id="productList"></main>
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Register with your email</h2>
+      <input type="email" id="email" placeholder="Your Email">
+      <button onclick="registerEmail()">Register</button>
+    </div>
+  </div>
+
+  <!-- Chat Button -->
+  <button class="chat-toggle" id="chatToggle">💬</button>
+
+  <!-- Chat Modal -->
+  <div id="chatModal" class="chat-modal">
+    <div class="chat-box">
+      <div class="chat-header">
+        <h3>Support Chat</h3>
+        <span class="close" id="closeChat">&times;</span>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 R2Store. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Social links: [Add later]</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
